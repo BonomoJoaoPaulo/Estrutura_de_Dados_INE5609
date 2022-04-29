@@ -6,30 +6,25 @@ Exemplo de entrada: 4
 Exemplo de saída: 4321001234
 """
 
-string_final = ""
-volta = False
-count = 0
 
-
-def sequencia_numeros(n):
-    global string_final
-    global volta
-    global count
+def sequencia_numeros(n, string_final, volta, count, n_inicial):
     if type(n) != int or n < 0:
         print("Por favor, tente com um valor inteiro positivo!")
         return
     else:
-        if count > 1 and (string_final[0] == string_final[-1]):
-            print(string_final)
-            return
+        if count == 0:
+            n_inicial = n
         if n == 0:
             volta = True
-        string_final += f"{n}"
+        string_final += f"{n} "
         count += 1
         if not volta:
-            sequencia_numeros(n-1)
+            sequencia_numeros(n-1, string_final, volta, count, n_inicial)
         else:
-            sequencia_numeros(n+1)
+            if count > 1 and n == n_inicial:
+                print(string_final)
+                return
+            sequencia_numeros(n+1, string_final, volta, count, n_inicial)
 
 
-sequencia_numeros(-1)
+sequencia_numeros(20, "", False, 0, 20)
