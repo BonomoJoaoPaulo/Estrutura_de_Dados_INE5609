@@ -33,7 +33,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.exc4">
+  <component name="RunManager" selected="Python.exc6">
     <configuration name="exc4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -141,8 +141,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.exc4" />
         <item itemvalue="Python.exc6" />
+        <item itemvalue="Python.exc4" />
         <item itemvalue="Python.exc7" />
         <item itemvalue="Python.exc9" />
         <item itemvalue="Python.exc8" />

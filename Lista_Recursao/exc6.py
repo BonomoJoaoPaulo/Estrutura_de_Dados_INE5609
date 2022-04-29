@@ -5,14 +5,13 @@ import math
 
 
 def busca_maior(array, maior_valor):
-    array_prov = array
     if array[0] >= maior_valor:
         maior_valor = array[0]
-    del(array_prov[0])
-    if not array_prov:
+    del(array[0])
+    if not array:
         print(maior_valor)
         return
-    busca_maior(array_prov, maior_valor)
+    busca_maior(array, maior_valor)
 
 
 lista_teste = [0, 1, 3, 17, 10, 5, 4, 10]
