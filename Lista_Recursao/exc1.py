@@ -1,6 +1,7 @@
 """ Sem utilizar estruturas de repetição (como for e while) ou a função len (e seus equivalentes).
 Faça uma função que recebe uma string e conta o seu número de caracteres um a um,
-a função deve retornar o número de caracteres total."""
+a função deve retornar o número de caracteres total.
+"""
 
 
 def conta_char(string_teste, count):

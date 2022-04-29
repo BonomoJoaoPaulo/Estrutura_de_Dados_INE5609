@@ -6,5 +6,6 @@ Exemplo de entrada: 1 2 3 10 4 2
 Exemplo de saída: False
 """
 
+
 def sequencia_crescente(sequencia):
     return
