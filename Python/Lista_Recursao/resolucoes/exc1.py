@@ -4,12 +4,11 @@ a função deve retornar o número de caracteres total.
 """
 
 
-def conta_char(string_teste, count):
+def conta_char(string_teste):
     if string_teste == "":
-        print(count)
-        return
-    count += 1
-    conta_char(string_teste[1:], count)
+        return 0
+    else:
+        return 1 + conta_char(string_teste[1:])
 
 
-conta_char('paralelepipedo', 0)
+print(conta_char('paralelepipedo'))
