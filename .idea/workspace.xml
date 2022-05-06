@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cf7e3da-815f-410e-93b1-618c7fde551e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Python/Josephus_Problem/Josephus.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Python/Josephus_Problem/linkedList.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Python/Pilha/Stack.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Python/Pilha/VerificaSequencia.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Python/StackArray.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/Josephus_Problem/Josephus.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/Josephus_Problem/Josephus.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.StackArray">
+  <component name="RunManager" selected="Python.exc1">
     <configuration name="Josephus" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -91,19 +87,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="exc4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="exc1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\jpabo\AppData\Local\Programs\Python\Python39\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lista_Recursao" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Python/Lista_Recursao/resolucoes" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lista_Recursao/exc4.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Python/Lista_Recursao/resolucoes/exc1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.StackArray" />
+        <item itemvalue="Python.exc1" />
         <item itemvalue="Python.Josephus" />
+        <item itemvalue="Python.StackArray" />
         <item itemvalue="Python.linkedList" />
         <item itemvalue="Python.exc6" />
-        <item itemvalue="Python.exc4" />
       </list>
     </recent_temporary>
   </component>
