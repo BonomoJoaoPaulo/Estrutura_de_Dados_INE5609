@@ -1,93 +1,87 @@
-class Node:
-    def __init__(self):
-        self.value = None
+class Node():
+    def __init__(self, x=0):
+        self.value = x
         self.next = self
 
 
-class LinkedList:
+class CircularLinkedList():
     def __init__(self):
         self.tail = None
         self.size = 0
 
     def append(self, x):
-        novo = Node()
-        novo.value = x
+        new_node = Node(x)
         if self.tail is None:
-            self.tail = novo
-            novo.next = self.tail
+            self.tail = new_node
+            new_node.next = self.tail
         else:
-            novo.next = self.tail.next
-            self.tail.next = novo
-
+            new_node.next = self.tail.next
+            self.tail.next = new_node
         self.size += 1
 
-    def insert(self, x, pos):
-        novo = Node()
-        novo.value = x
-        q = self.head
-        q.pos = 0
-        while q.pos != pos - 1:
-            q = q.next
-        novo.next = q.next
-        q.next = novo
+    def remove_next_node(self, previous_node):
+        if previous_node.next == self.tail:
+            self.tail = previous_node.next.next
 
-    def remove(self, x):
-        q = None
-        while True:
-            if q == None:
-                q = self.tail
-
-            elif q == self.tail:
-                break
-
-            if q.next.value == x:
-                if q.next == self.tail:
-                    self.tail = q.next.next
-                q.next = q.next.next
-                self.size -= 1
-                break
-
-            else:
-                q = q.next
-
-    def find_prox(self, m, current):
-        count = 1
-        to_kill = current
-        while count <= m:
-            to_kill = to_kill.next
-            count += 1
-        return to_kill
-
-    def printa(self):
-        q = None
-        while True:
-            if q == None:
-                q = self.tail
-            elif q == self.tail:
-                break
-            print(q.value)
-            q = q.next
+        previous_node.next = previous_node.next.next
+        self.size -= 1
 
 
-j = int(input())
+def solveJosephus(n, m):
+    list = createCircularLinkedList(n)
+    soldier = list.tail
 
-for count in range(j):
-    n = int(input())
-    m = int(input())
-    teste = LinkedList()
+    while list.size != 1:
+        previous_soldier = find_previous_soldier(soldier, m)
+        if previous_soldier.next != soldier:
+            list.remove_next_node(previous_soldier)
+            soldier = previous_soldier.next
 
-    teste.append(1)
-    for i in range(n, 1, -1):
-        teste.append(i)
+        else:
+            list.remove_next_node(soldier)
+            soldier = soldier.next
 
-    q = teste.tail
+    return list.tail.value
 
-    while teste.size != 1:
-        morto = teste.find_prox(m, q)
-        if morto == q:
-            morto = q.next
 
-        teste.remove(morto.value)
-        q = morto.next
+def readData():
+    data = []
+    test_cases = int(input())
+    data.append(test_cases)
 
-    print(f"Usando n={n}, m={m}, resultado={teste.tail.value}")
+    for i in range(test_cases):
+        n = int(input())
+        m = int(input())
+        data.append(n)
+        data.append(m)
+
+    return data
+
+
+def createCircularLinkedList(n):
+    list = CircularLinkedList()
+    list.append(1)
+    for number in range(n, 1, -1):
+        list.append(number)
+
+    return list
+
+
+def find_previous_soldier(current_soldier, m):
+    counter = 1
+    soldier_to_kill = current_soldier
+    while counter < m:
+        soldier_to_kill = soldier_to_kill.next
+        counter += 1
+
+    return soldier_to_kill
+
+
+data = readData()
+for test_number in range(data[0]):
+    n = data[(test_number * 2) + 1]
+    m = data[(test_number * 2) + 2]
+
+    result = solveJosephus(n, m)
+
+    print(f'Usando n={n}, m={m}, resultado={result}')
