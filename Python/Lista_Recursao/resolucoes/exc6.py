@@ -10,8 +10,8 @@ def busca_maior(array, maior_valor):
     del(array[0])
     if not array:
         return maior_valor
-    else:
-        return busca_maior(array, maior_valor)
+
+    return busca_maior(array, maior_valor)
 
 
 lista_teste = [0, 1, 3, 17, 10, 5, 4, 10]

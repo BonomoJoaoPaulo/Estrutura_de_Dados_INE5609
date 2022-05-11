@@ -7,10 +7,10 @@ Exemplo de palíndromos: “12321”, “radar”, “xxx++xxx”.
 def eh_palindromo(string_entrada):
     if string_entrada == "":
         return "Eh palindromo!"
-    if string_entrada[0] == string_entrada[-1]:
-        return eh_palindromo(string_entrada[1:-1])
-    else:
-        return "NAO eh palindromo."
+    elif string_entrada[0] != string_entrada[-1]:
+        return "NAO eh palindromo!"
+
+    return eh_palindromo(string_entrada[1:-1])
 
 
 print(eh_palindromo("rever"))
