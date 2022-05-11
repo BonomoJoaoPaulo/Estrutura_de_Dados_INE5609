@@ -6,9 +6,9 @@
 def soma_potencias(n, soma=0):
     soma += n**n
     if n == 1:
-        print(soma)
-        return
-    soma_potencias(n-1, soma)
+        return soma
+
+    return soma_potencias(n-1, soma)
 
 
-soma_potencias(4)
+print(soma_potencias(3))
