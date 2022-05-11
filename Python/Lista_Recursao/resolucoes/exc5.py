@@ -6,9 +6,9 @@
 def soma_intervalo(n, soma=0):
     soma += n
     if n == 1:
-        print(soma)
-        return
-    soma_intervalo(n-1, soma)
+        return soma
+    else:
+        return soma_intervalo(n-1, soma)
 
 
-soma_intervalo(10)
+print(soma_intervalo(6))

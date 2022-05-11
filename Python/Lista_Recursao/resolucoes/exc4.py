@@ -12,18 +12,17 @@ import math
 
 def sequencia_crescente(sequencia, i=0, anterior=-math.inf):
     if i == len(sequencia):
-        print("True")
-        return
+        return "True"
 
     if sequencia[i] > anterior:
-        sequencia_crescente(sequencia, i+1, sequencia[i])
+        return sequencia_crescente(sequencia, i+1, sequencia[i])
+
     else:
-        print("False")
-        return
+        return "False"
 
 
 lista_exemplo = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-lista_exemplo2 = [1, 2, 3, 4, 5, 3]
+lista_exemplo2 = [1, 2, 3, 10, 4, 2]
 
-sequencia_crescente(lista_exemplo)
-sequencia_crescente(lista_exemplo2)
+print(sequencia_crescente(lista_exemplo))
+print(sequencia_crescente(lista_exemplo2))
