@@ -6,15 +6,13 @@ Exemplo de palíndromos: “12321”, “radar”, “xxx++xxx”.
 
 def eh_palindromo(string_entrada):
     if string_entrada == "":
-        print("Eh palindromo!")
-        return
+        return "Eh palindromo!"
     if string_entrada[0] == string_entrada[-1]:
-        eh_palindromo(string_entrada[1:-1])
+        return eh_palindromo(string_entrada[1:-1])
     else:
-        print("NAO eh palindromo.")
-        return
+        return "NAO eh palindromo."
 
 
-eh_palindromo("rever")
+print(eh_palindromo("rever"))
 
-eh_palindromo("joao")
+print(eh_palindromo("joao"))
