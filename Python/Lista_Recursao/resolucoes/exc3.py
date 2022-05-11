@@ -7,24 +7,24 @@ Exemplo de saída: 4321001234
 """
 
 
-def sequencia_numeros(n, string_final, volta, count, n_inicial):
+def sequencia_numeros(n, count=0, n_inicial=0, volta=False, string_final=""):
     if type(n) != int or n < 0:
-        print("Por favor, tente com um valor inteiro positivo!")
-        return
+        return "Por favor, tente com um valor inteiro positivo!"
     else:
         if count == 0:
             n_inicial = n
         if n == 0:
             volta = True
+
         string_final += f"{n} "
         count += 1
-        if not volta:
-            sequencia_numeros(n-1, string_final, volta, count, n_inicial)
-        else:
+        if volta:
             if count > 1 and n == n_inicial:
-                print(string_final)
-                return
-            sequencia_numeros(n+1, string_final, volta, count, n_inicial)
+                return string_final
+
+            return sequencia_numeros(n+1, count, n_inicial, volta, string_final)
+
+    return sequencia_numeros(n-1, count, n_inicial, volta, string_final)
 
 
-sequencia_numeros(20, "", False, 0, 20)
+print(sequencia_numeros(10))
