@@ -1,6 +1,3 @@
-""" Implemente uma função recursiva que retorna o maior elemento de uma lista (ou array).
-"""
-
 import math
 
 
