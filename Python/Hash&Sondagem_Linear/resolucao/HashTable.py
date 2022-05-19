@@ -20,7 +20,7 @@ class HashTable:
         else:
             while not self.empty_pos(pos):
                 pos += 1
-                if pos == self.size - 1:
+                if pos == self.size:
                     pos = 0
                 if pos == pos_inicial:
                     return "Nao foi possivel fazer a insercao, a tabela esta cheia!"
