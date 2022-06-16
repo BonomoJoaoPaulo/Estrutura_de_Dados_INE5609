@@ -1,4 +1,4 @@
-class BTS:
+class BST:
     class _Node:
         def __init__(self, element=None):
             self._element = element
@@ -9,6 +9,9 @@ class BTS:
         self.size = 0
 #        self.hight = self.return_node_hight(0)
         self.root = None
+        self.ordem_array = []
+        self.pre_ordem_array = []
+        self.pos_ordem_array = []
 
 # Insere um elemento x em um node
     def insert(self, x, root=None):
@@ -32,15 +35,37 @@ class BTS:
         self.size += 1
         return self.size
 
-    def print_tree(self, root):
-        if root is None:
-            return "ola"
-        print(root._element)
-        self.print_tree(root._left_child)
-        self.print_tree(root._right_child)
+    def append_in_pre_ordem_array(self, root):
+        if root is not None:
+            print(root._element, end = " ")
+            self.append_in_pre_ordem_array(root._left_child)
+            self.append_in_pre_ordem_array(root._right_child)
+
+    def append_em_ordem_array(self, root):
+        if root is not None:
+            left_child = root._left_child
+            right_child = root._right_child
+
+            self.append_em_ordem_array(left_child)
+            print(root._element, end=" ")
+            self.append_em_ordem_array(right_child)
+
+    def append_pos_ordem_array(self, root):
+        if root is not None:
+            left_child = root._left_child
+            right_child = root._right_child
+
+            self.append_pos_ordem_array(left_child)
+            self.append_pos_ordem_array(right_child)
+            print(root._element, end=" ")
+
+
+
+
+
 
     def __str__(self):
-        return f"{self.print_tree(self.root)}"
+        return f"{self.append_em_ordem_array(self.root)}"
 
 """
     def left_child(self, x):
@@ -77,18 +102,19 @@ class BTS:
 """
 
 # Criacao de uma Arvore
-arvore_teste = BTS()
+arvore_teste = BST()
+
+# Input do número de nós
+nodes_number = int(input())
 
 # Criacao dos nodes
-arvore_teste.insert(1)
-arvore_teste.insert(20)
-arvore_teste.insert(64)
-arvore_teste.insert(-15)
-arvore_teste.insert(12)
-arvore_teste.insert(3)
-arvore_teste.insert(98)
-arvore_teste.insert(10)
-arvore_teste.insert(33)
+for i in range(0, nodes_number):
+    new_node = int(input())
+    arvore_teste.insert(new_node)
 
 # Testes
-print(arvore_teste)
+arvore_teste.append_in_pre_ordem_array(arvore_teste.root)
+print("\n")
+arvore_teste.append_em_ordem_array(arvore_teste.root)
+print("\n")
+arvore_teste.append_pos_ordem_array(arvore_teste.root)
