@@ -114,7 +114,7 @@ for i in range(0, nodes_number):
 
 # Testes
 arvore_teste.append_in_pre_ordem_array(arvore_teste.root)
-print("\n")
+print("")
 arvore_teste.append_em_ordem_array(arvore_teste.root)
-print("\n")
+print("")
 arvore_teste.append_pos_ordem_array(arvore_teste.root)
