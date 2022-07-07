@@ -34,12 +34,10 @@ class Graph:
                     if len(self.matrix) < i + 2:
                         self.matrix.append([v])
                     self.matrix[i+1].append(v)
-                print(self.matrix)
-                return
+                    return
         self.matrix.append([u])
         self.matrix.append([v])
 
-        
     def insert_aresta_in_matrix(self, u, v):
         self.matrix[u - 1][v - 1] = 1
         return self.matrix[u-1]
