@@ -3,7 +3,6 @@ class Graph:
         self._V = []
         self._number_V = 0
         self._E = []
-        self._matrix = []
 
     class _Vertice:
         def __init__(self, element) -> None:
@@ -32,14 +31,5 @@ class Graph:
         self._E.append(new_aresta)
         return new_aresta
 
-    def _insert_aresta_in_matrix(self, u, v):
-        self._matrix[u - 1][v - 1] = 1
-        return self._matrix[u-1]
-    
-    def _calculate_stations(self):
-        return len(self._matrix)
-
-
     def __str__(self) -> str:
-        return str(self._matrix)
-        #return f"Vertices: {self.V} | Arestas: {self.E}"
+        return str(self._V)
