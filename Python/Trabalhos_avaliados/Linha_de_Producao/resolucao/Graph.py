@@ -30,19 +30,7 @@ class Graph:
     def _insert_aresta(self, u, v):
         new_aresta = self._Aresta(u, v)
         self._E.append(new_aresta)
-        self._redefine_matrix(u, v)
         return new_aresta
-    
-    def _redefine_matrix(self, u, v):
-        for i in range(len(self._matrix)):
-            for j in range(len(self._matrix[i])):
-                if self._matrix[i][j] == u:
-                    if len(self._matrix) < i + 2:
-                        self._matrix.append([v])
-                    self._matrix[i+1].append(v)
-                    return
-        self._matrix.append([u])
-        self._matrix.append([v])
 
     def _insert_aresta_in_matrix(self, u, v):
         self._matrix[u - 1][v - 1] = 1
