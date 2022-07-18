@@ -1,8 +1,6 @@
-from xml.dom.minidom import Element
-
 
 class AVL:
-    def __init__(self, element):
+    def __init__(self, element = None):
         self.element = element
         self.setaFilhos(None, None)
 
@@ -29,13 +27,13 @@ class AVL:
         return 1 + max(prof_left, prof_dir)
 
     def rotacaoleft(self):
-        self.eleelement, self.right.eleelement = self.right.eleelement, self.eleelement
+        self.element, self.right.element = self.right.element, self.element
         old_left = self.left
         self.setaFilhos(self.right, self.right.right)
         self.left.setaFilhos(old_left, self.left.left)
 
     def rotacaoright(self):
-        self.eleelement, self.left.eleelement = self.left.eleelement, self.eleelement
+        self.element, self.left.element = self.left.element, self.element
         old_right = self.right
         self.setaFilhos(self.left.left, self.left)
         self.right.setaFilhos(self.right.right, old_right)
@@ -62,7 +60,7 @@ class AVL:
                 self.rotacaorightleft()
 
     def insere(self, element):
-        if element <= self.element:
+        if self.element is None or element <= self.element:
             if not self.left:
                 self.left = AVL(element)
             else:
@@ -74,9 +72,23 @@ class AVL:
                 self.right.insere(element)
         self.executaBalanco()
 
-    def imprimeArvore(self, indent = 0):
-        print(" " * indent + str(self.element))
-        if self.left:
-            self.left.imprimeArvore(indent + 2)
-        if self.right:
-            self.right.imprimeArvore(indent + 2)
+    def imprime_pre_ordem(self, root):
+        if root is not None:
+            if root.element is not None:
+                print(root.element, end=" ")
+            self.imprime_pre_ordem(root.left)
+            self.imprime_pre_ordem(root.right)
+        
+    def imprime_em_ordem(self, root):
+        if root is not None:
+            self.imprime_em_ordem(root.left)
+            if root.element is not None:
+                print(root.element, end=" ")
+            self.imprime_em_ordem(root.right)
+
+    def imprime_pos_ordem(self, root):
+        if root is not None:
+            self.imprime_pos_ordem(root.left)
+            self.imprime_pos_ordem(root.right)
+            if root.element is not None:
+                print(root.element, end=" ")
